@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CA4034F-50F3-4391-B9CE-A0DF4702511D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SWCCorp</RootNamespace>
+    <AssemblyName>SWCCorp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleIO.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow\AddOrderWorkflow.cs" />
+    <Compile Include="Workflow\DisplayingOrdersWorkflow.cs" />
+    <Compile Include="Workflow\RemoveOrderWorkflow.cs" />
+    <Compile Include="Workflow\UpdateOrderWorkflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\SWCCorp.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWCCorp.BLL\SWCCorp.BLL.csproj">
+      <Project>{5f06160b-61de-4892-b62c-4b1e83dc5bd4}</Project>
+      <Name>SWCCorp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWCCorp.Models\SWCCorp.Models.csproj">
+      <Project>{d915263f-0931-4470-bc1d-4212762fff39}</Project>
+      <Name>SWCCorp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\SWCCorp.BLL.dll" />
+    <Content Include="bin\Debug\SWCCorp.BLL.pdb" />
+    <Content Include="bin\Debug\SWCCorp.Data.dll" />
+    <Content Include="bin\Debug\SWCCorp.Data.pdb" />
+    <Content Include="bin\Debug\SWCCorp.exe" />
+    <Content Include="bin\Debug\SWCCorp.Models.dll" />
+    <Content Include="bin\Debug\SWCCorp.Models.pdb" />
+    <Content Include="bin\Debug\SWCCorp.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

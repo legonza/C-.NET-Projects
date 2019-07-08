@@ -1,0 +1,28 @@
+USE [master]
+GO
+
+CREATE LOGIN DvdApp WITH PASSWORD='22222'
+GO
+
+USE DvdLibraryDatabase
+GO
+
+CREATE USER DvdApp FOR LOGIN DvdApp
+GO
+
+GRANT EXECUTE ON GetAllDvds TO DvdApp
+GRANT EXECUTE ON GetDvdById TO DvdApp
+GRANT EXECUTE ON AddDvd TO DvdApp
+GRANT EXECUTE ON EditDvdById TO DvdApp
+GRANT EXECUTE ON DeleteDvdById TO DvdApp
+GO
+
+CREATE ROLE db_executor
+GRANT EXECUTE TO db_executor
+ALTER ROLE db_executor ADD MEMBER DvdApp
+
+GRANT SELECT ON dbo.Dvds TO DvdApp
+GRANT INSERT ON dbo.Dvds TO DvdApp
+GRANT UPDATE ON dbo.Dvds TO DvdApp
+GRANT DELETE ON dbo.Dvds TO DvdApp
+GO

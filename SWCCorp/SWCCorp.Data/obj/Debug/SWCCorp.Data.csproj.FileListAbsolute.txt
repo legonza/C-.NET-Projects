@@ -1,0 +1,9 @@
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\bin\Debug\SWCCorp.Data.dll
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\bin\Debug\SWCCorp.Data.pdb
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\bin\Debug\SWCCorp.Models.dll
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\bin\Debug\SWCCorp.Models.pdb
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\obj\Debug\SWCCorp.Data.csprojAssemblyReference.cache
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\obj\Debug\SWCCorp.Data.csproj.CoreCompileInputs.cache
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\obj\Debug\SWCCorp.Data.csproj.CopyComplete
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\obj\Debug\SWCCorp.Data.dll
+C:\Users\gonza\source\repos\SWCCorp\SWCCorp.Data\obj\Debug\SWCCorp.Data.pdb
