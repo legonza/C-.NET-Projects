@@ -1,0 +1,84 @@
+﻿@model CarDealership.UI.Models.VehicleEditViewModel
+@{
+    ViewBag.Title = "EditVehicle";
+}
+
+
+<div class="row">
+    <div class="col-xs-4">
+        <h2>Edit Vehicle</h2>
+        @using (Html.BeginForm("EditVehicle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAddVehicle" }))
+        {
+            @Html.ValidationSummary()
+            @Html.HiddenFor(m => m.vehicle1.VehicleId)
+            <div class="form-group">
+                <label>Make</label>
+                @Html.DropDownListFor(m => m.vehicle1.MakeId, Model.Make, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                @Html.DropDownListFor(m => m.vehicle1.Type, new SelectListItem[] { new SelectListItem() { Text = "New", Value = "New" }, new SelectListItem() { Text = "Used", Value = "USED" } }, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Year</label>
+                @Html.TextBoxFor(m => m.vehicle1.Year, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Color</label>
+                @Html.DropDownListFor(m => m.vehicle1.Color, new SelectListItem[] { new SelectListItem() { Text = "black", Value = "black" }, new SelectListItem() { Text = "red", Value = "red" }, new SelectListItem() { Text = "blue", Value = "blue" } }, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Mileage</label>
+                @Html.TextBoxFor(m => m.vehicle1.Miles, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>MSRP</label>
+                @Html.TextBoxFor(m => m.vehicle1.Msrp, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Model</label>
+                @Html.DropDownListFor(m => m.vehicle1.ModelId, Model.Models, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Body Style</label>
+                @Html.DropDownListFor(m => m.vehicle1.BodyStyle, new SelectListItem[] { new SelectListItem() { Text = "SUV", Value = "suv" }, new SelectListItem() { Text = "Truck", Value = "truck" }, new SelectListItem() { Text = "Sedan", Value = "sedan" } }, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Transmission</label>
+                @Html.DropDownListFor(m => m.vehicle1.Transmission, new SelectListItem[] { new SelectListItem() { Text = "Automatic", Value = "automatic" }, new SelectListItem() { Text = "Manual", Value = "manual" } }, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Interior</label>
+                @Html.DropDownListFor(m => m.vehicle1.Interior, new SelectListItem[] { new SelectListItem() { Text = "Black", Value = "black" }, new SelectListItem() { Text = "Leather", Value = "leather" }, new SelectListItem() { Text = "Gray", Value = "gray" } }, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Vin #</label>
+                @Html.TextBoxFor(m => m.vehicle1.Vin, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Sales Price</label>
+                @Html.TextBoxFor(m => m.vehicle1.Price, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                @Html.TextAreaFor(m => m.vehicle1.Description, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Picture</label>
+                <br />
+                <input id="ImageUpload" name="ImageUpload" type="file" class="form-control" />
+                <button>Upload</button>
+            </div>
+            <div class="checkbox">
+                <label>
+                    
+                    @Html.CheckBoxFor(m => m.vehicle1.Featured) Feature this Vehicle
+                </label>
+            </div>
+            
+            <button class="form-group btn btn-primary" name="vehicleId" value="vehicleId">Delete</button>
+            <button class="btn btn-primary">Save</button>
+
+        }
+    </div>
+</div>

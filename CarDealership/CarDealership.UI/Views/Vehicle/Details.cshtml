@@ -1,0 +1,54 @@
+﻿@model CarDealership.Models.Queries.VehicleItem
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Vehicle Details</h2>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <label>@Model.Year</label>
+        <label>@Model.MakeName</label>
+        <label>@Model.ModelName</label>
+        <img src="@Url.Content("~/Images/" + Model.ImageFileName)" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>BodyStyle: </strong></td>
+                    <td>@Model.BodyStyle</td>
+                    <td><strong>Interior: </strong></td>
+                    <td>@Model.Interior</td>
+                    <td><strong>Sales Price: </strong></td>
+                    <td>@Model.Price</td>
+                </tr>
+                <tr>
+                    <td><strong>Trans: </strong></td>
+                    <td>@Model.Transmission</td>
+                    <td><strong>Mileage: </strong></td>
+                    <td>@Model.Type</td>
+                    <td><strong>MSRP: </strong></td>
+                    <td>@Model.Msrp</td>
+                </tr>
+                <tr>
+                    <td><strong>Color: </strong></td>
+                    <td>@Model.Color</td>
+                    <td><strong>Vin#: </strong></td>
+                    <td>@Model.Vin</td>
+                </tr>
+                <tr>
+                    <td><strong>Description: </strong></td>
+                    <td>@Model.Description</td>
+                    <td>@Html.ActionLink("Contact Us", "Contact/" + Model.Vin)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

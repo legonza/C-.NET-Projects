@@ -1,0 +1,65 @@
+﻿@model CarDealership.UI.Models.VehicleReportsViewModel
+@{
+    ViewBag.Title = "InventoryReport";
+}
+
+<h2>Inventory Report</h2>
+<label>New Vehicles</label>
+<div class="row">
+    <div class="form-group col-md-8">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Count</th>
+                    <th>Stock Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.NewVehicle)
+                {
+                    <tr>
+                        <td>@item.Year</td>
+                        <td>@item.MakeName</td>
+                        <td>@item.ModelName</td>
+                        <td>@item.Count</td>
+                        <td>@item.StockValue</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <label>Used Vehicles</label>
+        
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Count</th>
+                    <th>Stock Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.UsedVehicle)
+                {
+                    <tr>
+                        <td>@item.Year</td>
+                        <td>@item.MakeName</td>
+                        <td>@item.ModelName</td>
+                        <td>@item.Count</td>
+                        <td>@item.StockValue</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+            
+    </div>
+</div>
+

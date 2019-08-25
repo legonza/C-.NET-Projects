@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CarDealership.Models.Queries.FeaturedVehicles>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>BIG HUGE SALE!!!</h1>
+    <p class="lead">We sell Jeep, Dodge, and Chevrolet.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Featured Vehicles</h2>
+        @foreach(var vehicle in Model)
+        {
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <p class="featuredVehicles"><img src="@Url.Content("~/Images/" + vehicle.ImageFileName)" /></p>
+        <p class="featuredVehicles">@vehicle.Year, @vehicle.MakeName, @vehicle.ModelName</p>
+        <p class="featuredVehicles">@vehicle.Price</p>
+    </div>
+        }
+    </div>
+</div>

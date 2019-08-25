@@ -18,13 +18,6 @@ namespace DvdLibraryWebAPI.Controllers
         public DvdController()
         {
             _repo = RepositoryFactory.Create();
-        //1. make DvdRepository implement the IDvdRepository interface
-        //2. Create the IDvdRepository interface
-        //2a. replace DvdRepository in this file with _repo
-        //3. Create the RepositoryFactory class and the create method
-        //4. Add the setting in app.config to pick which repository to use
-        //5. Create the ADO respository that also implements IDvdRepository
-        //6. Create the Entity Framework Repository that also implements IDvdRepository
 
         }
 

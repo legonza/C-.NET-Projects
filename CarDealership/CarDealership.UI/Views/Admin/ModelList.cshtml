@@ -1,0 +1,41 @@
+﻿@model List<CarDealership.Models.Tables.Model>
+@{
+    ViewBag.Title = "ModelList";
+}
+
+<h2>Models</h2>
+<div class="row" style="border:solid;padding:15px;">
+    <div class="form-group col-12">
+        <label>New Model</label>
+        <input />
+        <label>Make</label>
+        @Html.DropDownList("MakeName", new SelectList(Model, "MakeName", "MakeName"))
+        <button>Save</button>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Date Added</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var models in Model)
+                {
+                    <tr>
+                        <td>@models.MakeName</td>
+                        <td>@models.ModelName</td>
+                        <td>@models.AddedDate</td>
+                        <td>@models.Email</td>
+                    </tr>
+                }
+            </tbody>
+            
+        </table>
+    </div>
+</div>

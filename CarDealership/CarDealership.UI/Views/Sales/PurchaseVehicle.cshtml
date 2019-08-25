@@ -1,0 +1,86 @@
+﻿@model CarDealership.UI.Models.PurchasedViewModel
+@{
+    ViewBag.Title = "PurchaseVehicle";
+}
+
+<h2>Purchase Vehicle</h2>
+<div class="row" style="border:solid;padding:15px;">
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <img src="@Url.Content("~/Images/" + Model.vehicles.ImageFileName)" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>BodyStyle: </strong></td>
+                    <td>@Model.vehicles.BodyStyle</td>
+                    <td><strong>Interior: </strong></td>
+                    <td>@Model.vehicles.Interior</td>
+                    <td><strong>Sales Price: </strong></td>
+                    <td>@Model.vehicles.Price</td>
+                </tr>
+                <tr>
+                    <td><strong>Trans: </strong></td>
+                    <td>@Model.vehicles.Transmission</td>
+                    <td><strong>Mileage: </strong></td>
+                    <td>@Model.vehicles.Type</td>
+                    <td><strong>MSRP: </strong></td>
+                    <td>@Model.vehicles.Msrp</td>
+                </tr>
+                <tr>
+                    <td><strong>Color: </strong></td>
+                    <td>@Model.vehicles.Color</td>
+                    <td><strong>Vin#: </strong></td>
+                    <td>@Model.vehicles.Vin</td>
+                </tr>
+                <tr>
+                    <td><strong>Description: </strong></td>
+                    <td>@Model.vehicles.Description</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<h2>Sales Information</h2>
+<div class="row">
+    @using (Html.BeginForm("PurchaseVehicle", "Sales", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAddVehicle" }))
+    {
+        @Html.ValidationSummary()
+        <div class="form-group col-md-12">
+            <label>Name</label>
+            @Html.TextBoxFor(m=>m.purchases.Name, new { @class = "form-control" })
+            <label>Phone</label>
+            @Html.TextBoxFor(m=>m.purchases.Phone, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            @Html.TextBoxFor(m=>m.purchases.Email, new { @class = "form-control" })
+        </div>
+        <div calss="form-group">
+            <label>Street 1</label>
+            @Html.TextBoxFor(m=>m.purchases.StreetOne, new { @class = "form-control" })
+            <label>Street 2</label>
+            @Html.TextBoxFor(m=>m.purchases.StreetTwo, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            @Html.TextBoxFor(m=>m.purchases.City, new { @class = "form-control" })
+            <label>State</label>
+            @Html.DropDownListFor(m=>m.States, Model.States, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Zipcode</label>
+            @Html.TextBoxFor(m=>m.purchases.Zipcode, new { @class = "form-control" })
+        </div>
+        <hr/>
+        <div class="form-group">
+            <label>Purchase Price</label>
+            @Html.TextBoxFor(m=>m.purchases.PurchasePrice, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-primary">Save</button>
+    }
+    
+</div>
+
+

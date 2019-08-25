@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CarDealership.Models.Queries.AllSpecials>
+@{
+    ViewBag.Title = "SpecialList";
+}
+
+<h2>Specials</h2>
+<div class="row" style="border:solid;padding:15px;">
+    <form method="post">
+        <div class="form-group col-md-12">
+            <label>Title</label>
+            @Html.TextBox("Title")
+        </div>
+        <div class="form-group col-md-12">
+            <label class="from-control">Description</label>
+            @Html.TextArea("Description")
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+    
+</div>
+<br />
+@foreach (var special in Model)
+{
+    <div class="row" style="border:solid; padding: 15px;">
+        <form class="form-group" method="post" action="DeleteSpecial">
+            <div class="col-md-3">
+
+                <p><img src="@Url.Content("~/Images/" + special.SpecialsImage)" /></p>
+
+            </div>
+            <div class="col-md-9">
+                <div>
+                    <p>@special.Title</p>
+                    <button class="btn btn-primary" name="SpecialId" value="@special.SpecialsId">Delete</button>
+                    <br />
+                    <p>@special.Description</p>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    <br />
+}
+

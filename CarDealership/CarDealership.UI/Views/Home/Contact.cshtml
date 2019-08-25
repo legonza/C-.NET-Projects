@@ -1,0 +1,35 @@
+﻿@model CarDealership.Models.Tables.Contacts
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact Us</h2>
+<div class="row">
+    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmContacts" }))
+    {
+        <div class="form-group col-md-5">
+            <label>Name</label>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            <label>Email</label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            <label>Phone</label>
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            <label id="Message">Message</label>
+            @Html.TextBoxFor(m => m.Message, new { @class = "form-control" })
+            <button class="btn btn-primary">Submit</button>
+    }
+    </div>
+    <div class="form-group col-md-7">
+        <text>111 W Main St</text>
+        <br />
+        <text>Kent, OH 44444</text>
+        <br />
+        <text>Sales: 111-111-1111</text>
+        <br />
+        <text>Service: 111-111-1112</text>
+    </div>
+</div>
+
+
+
+
